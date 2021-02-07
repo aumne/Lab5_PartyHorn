@@ -76,5 +76,5 @@ function update_audio(icon, source) {
 input_form.addEventListener("submit", update_form)
 function update_form(event) {
     event.preventDefault();
-    audio_file.play();
+    audio_source.play();
 }
