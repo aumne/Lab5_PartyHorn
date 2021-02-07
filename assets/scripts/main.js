@@ -1,5 +1,5 @@
-let volume_number = document.getElementById("volume-number");
-let volume_slider = document.getElementById("volume-slider");
+const volume_number = document.getElementById("volume-number");
+const volume_slider = document.getElementById("volume-slider");
 
 // when number input changes
 volume_number.addEventListener("input", update_slider());
@@ -16,9 +16,9 @@ function update_number() {
 }
 
 // when either number or slider input changes
-let volume_icon = document.getElementById("volume-number");
+const audio_source = document.getElementById("horn-sound");
 function update_volume(volume) {
-    volume_icon.volume = volume;
+    audio_source.volume = volume;
     if (66 < volume) {
         update_volume_icon("./assets/media/icons/volume-level-3.svg");
         update_button(false);
@@ -34,21 +34,21 @@ function update_volume(volume) {
     }
 }
 
-let volume_image = document.getElementById("volume-image");
+const volume_image = document.getElementById("volume-image");
 function update_volume_icon(icon_path) {
     volume_image.src = icon_path;
 }
 
-let form_button = document.getElementById("honk-btn");
+const form_button = document.getElementById("honk-btn");
 function update_button(value) {
     form_button.disabled = value;
 }
 
 // when radio switch is changed
-let sound_options = document.getElementById("audio-selection");
-let air_horn = document.getElementById("radio-air-horn");
-let car_horn = document.getElementById("radio-car-horn");
-let party_horn = document.getElementById("radio-party-horn");
+const sound_options = document.getElementById("audio-selection");
+const air_horn = document.getElementById("radio-air-horn");
+const car_horn = document.getElementById("radio-car-horn");
+const party_horn = document.getElementById("radio-party-horn");
 
 sound_options.addEventListener("input", update_horn());
 function update_horn() {
@@ -61,8 +61,7 @@ function update_horn() {
     }
 }
 
-let audio_icon = document.getElementById("sound-image");
-let audio_source = document.getElementById("horn-sound");
+const audio_icon = document.getElementById("sound-image");
 function update_audio(icon, source) {
     audio_icon.src = icon;
     audio_source.src = source;
@@ -70,7 +69,7 @@ function update_audio(icon, source) {
 }
 
 // when button is pressed
-let input_form = document.getElementById("party-horn-form");
+const input_form = document.getElementById("party-horn-form");
 input_form.addEventListener("submit", update_form())
 function update_form(event) {
     event.preventDefault();
