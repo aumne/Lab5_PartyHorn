@@ -1,5 +1,5 @@
-const volume_number = document.getElementById("volume-number");
-const volume_slider = document.getElementById("volume-slider");
+let volume_number = document.getElementById("volume-number");
+let volume_slider = document.getElementById("volume-slider");
 
 // when number input changes
 volume_number.addEventListener("input", update_slider());
@@ -16,7 +16,7 @@ function update_number() {
 }
 
 // when either number or slider input changes
-const volume_icon = document.getElementById("volume-number");
+let volume_icon = document.getElementById("volume-number");
 function update_volume(volume) {
     volume_icon.volume = volume;
     if (66 < volume) {
@@ -34,21 +34,21 @@ function update_volume(volume) {
     }
 }
 
-const volume_image = document.getElementById("volume-image");
+let volume_image = document.getElementById("volume-image");
 function update_volume_icon(icon_path) {
     volume_image.src = icon_path;
 }
 
-const form_button = document.getElementById("honk-btn");
+let form_button = document.getElementById("honk-btn");
 function update_button(value) {
     form_button.disabled = value;
 }
 
 // when radio switch is changed
-const sound_options = document.getElementById("audio-selection");
-const air_horn = document.getElementById("radio-air-horn");
-const car_horn = document.getElementById("radio-car-horn");
-const party_horn = document.getElementById("radio-party-horn");
+let sound_options = document.getElementById("audio-selection");
+let air_horn = document.getElementById("radio-air-horn");
+let car_horn = document.getElementById("radio-car-horn");
+let party_horn = document.getElementById("radio-party-horn");
 
 sound_options.addEventListener("input", update_horn());
 function update_horn() {
@@ -61,8 +61,8 @@ function update_horn() {
     }
 }
 
-const audio_icon = document.getElementById("sound-image");
-const audio_source = document.getElementById("horn-sound");
+let audio_icon = document.getElementById("sound-image");
+let audio_source = document.getElementById("horn-sound");
 function update_audio(icon, source) {
     audio_icon.src = icon;
     audio_source.src = source;
@@ -70,7 +70,7 @@ function update_audio(icon, source) {
 }
 
 // when button is pressed
-const input_form = document.getElementById("party-horn-form");
+let input_form = document.getElementById("party-horn-form");
 input_form.addEventListener("submit", update_form())
 function update_form(event) {
     event.preventDefault();
