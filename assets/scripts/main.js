@@ -14,14 +14,14 @@ const audio_icon = document.getElementById("sound-image");
 const input_form = document.getElementById("party-horn-form");
 
 // when number input changes
-volume_number.addEventListener("input", update_slider());
+volume_number.addEventListener("input", update_slider);
 function update_slider() {
     volume_slider.value = volume_number.value;
     update_volume(volume_number.value);
 }
 
 // when slider input changes
-volume_slider.addEventListener("input", update_number());
+volume_slider.addEventListener("input", update_number);
 function update_number() {
     volume_number.value = volume_slider.value;
     update_volume(volume_slider.value);
@@ -55,7 +55,7 @@ function update_button(value) {
 }
 
 // when radio switch is changed
-sound_options.addEventListener("input", update_horn());
+sound_options.addEventListener("input", update_horn);
 function update_horn() {
     if (air_horn.checked) {
         update_audio("./assets/media/images/air-horn.svg", "./assets/media/audio/air-horn.mp3");
@@ -73,7 +73,7 @@ function update_audio(icon, source) {
 }
 
 // when button is pressed
-input_form.addEventListener("submit", update_form())
+input_form.addEventListener("submit", update_form)
 function update_form(event) {
     event.preventDefault();
     audio_file.play();
