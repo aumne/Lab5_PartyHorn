@@ -2,14 +2,14 @@ const volume_number = document.getElementById("volume-number");
 const volume_slider = document.getElementById("volume-slider");
 
 // when number input changes
-volume_number.addEventListener("change", update_slider());
+volume_number.addEventListener("input", update_slider());
 function update_slider() {
     volume_slider.value = volume_number.value;
     update_volume(volume_number.value);
 }
 
 // when slider input changes
-volume_slider.addEventListener("change", update_number());
+volume_slider.addEventListener("input", update_number());
 function update_number() {
     volume_number.value = volume_slider.value;
     update_volume(volume_slider.value);
@@ -50,7 +50,7 @@ const air_horn = document.getElementById("radio-air-horn");
 const car_horn = document.getElementById("radio-car-horn");
 const party_horn = document.getElementById("radio-party-horn");
 
-sound_options.addEventListener("change", update_horn());
+sound_options.addEventListener("input", update_horn());
 function update_horn() {
     if (air_horn.checked) {
         update_audio("./assets/media/images/air-horn.svg", "./assets/media/audio/air-horn.mp3");
