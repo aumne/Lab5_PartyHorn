@@ -30,7 +30,7 @@ function update_number() {
 // when either number or slider input changes
 
 function update_volume(volume) {
-    audio_source.volume = volume;
+    audio_source.volume = volume / 100;
     if (66 < volume) {
         update_volume_icon("./assets/media/icons/volume-level-3.svg");
         update_button(false);
